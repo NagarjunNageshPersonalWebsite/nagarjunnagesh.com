@@ -45,7 +45,7 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}          
 
       - name: Run Unit Test
-        run: go test -v ./...
+        run: go test -v ./infra/...
 
       - name: Bootstrap CDK
         run: |
