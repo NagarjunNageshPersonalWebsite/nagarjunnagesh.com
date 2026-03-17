@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        yc: {
+                            orange: '#F26522',
+                            dark: '#1A1A1A',
+                            light: '#F8F9FA',
+                            gray: '#6B7280',
+                            border: '#E5E7EB'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FAFAFA;
+            color: #1A1A1A;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        .yc-link {
+            transition: color 0.2s ease;
+        }
+        .yc-link:hover {
+            color: #F26522;
+        }
+        .nav-link {
+            position: relative;
+            text-decoration: none;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #F26522;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="w-full min-h-screen m-0 p-0 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav id="header" class="w-full bg-white border-b border-yc-border sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="font-serif font-bold text-2xl text-yc-orange tracking-tighter">JD.</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#about" class="text-sm font-medium text-yc-dark nav-link">About</a>
+                    <a href="#doing" class="text-sm font-medium text-yc-dark nav-link">What I'm Doing</a>
+                    <a href="#experience" class="text-sm font-medium text-yc-dark nav-link">Experience</a>
+                    <a href="#projects" class="text-sm font-medium text-yc-dark nav-link">Projects</a>
+                    <a href="#contact" class="px-4 py-2 bg-yc-orange text-white text-sm font-medium rounded hover:bg-orange-600 transition-colors">Call Me</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-yc-dark hover:text-yc-orange focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-yc-border absolute w-full left-0">
+            <div class="px-4 pt-2 pb-6 space-y-1 shadow-lg">
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-yc-dark hover:text-yc-orange hover:bg-gray-50 rounded-md">About</a>
+                <a href="#doing" class="block px-3 py-2 text-base font-medium text-yc-dark hover:text-yc-orange hover:bg-gray-50 rounded-md">What I'm Doing</a>
+                <a href="#experience" class="block px-3 py-2 text-base font-medium text-yc-dark hover:text-yc-orange hover:bg-gray-50 rounded-md">Experience</a>
+                <a href="#projects" class="block px-3 py-2 text-base font-medium text-yc-dark hover:text-yc-orange hover:bg-gray-50 rounded-md">Projects</a>
+                <a href="#contact" class="block px-3 py-2 mt-4 text-center text-base font-medium bg-yc-orange text-white rounded-md">Call Me</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Wrapper -->
+    <main class="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+
+        <!-- Hero Section -->
+        <section id="hero" class="mb-24 flex flex-col md:flex-row items-center gap-12">
+            <div class="w-full md:w-2/3 order-2 md:order-1">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-yc-dark">
+                    Building <span class="text-yc-orange italic">systems</span> that scale and <span class="text-yc-orange italic">interfaces</span> that delight.
+                </h1>
+                <p class="text-lg md:text-xl text-yc-gray mb-8 max-w-2xl font-light leading-relaxed">
+                    I'm John Doe, a software engineer and product designer based in San Francisco. I specialize in turning complex problems into elegant, minimalist digital solutions.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" class="px-6 py-3 bg-yc-dark text-white font-medium rounded hover:bg-black transition-colors flex items-center gap-2">
+                        Get in touch <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" class="px-6 py-3 border border-yc-border text-yc-dark font-medium rounded hover:border-yc-orange hover:text-yc-orange transition-colors flex items-center gap-2">
+                        <i class="fa-brands fa-github text-lg"></i> GitHub
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="px-6 py-3 border border-yc-border text-yc-dark font-medium rounded hover:border-yc-orange hover:text-yc-orange transition-colors flex items-center gap-2">
+                        <i class="fa-brands fa-linkedin text-lg"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+            <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white shadow-xl order-1 md:order-2 flex-shrink-0">
+                <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/701ec4ce54-ecd0f9a01788d4efe5ce.png" alt="professional headshot portrait of a software engineer, minimalist background, black and white aesthetic" />
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="w-full h-px bg-yc-border mb-20"></div>
+
+        <!-- What I'm Doing Section -->
+        <section id="doing" class="mb-24">
+            <div class="flex flex-col md:flex-row gap-8 md:gap-16">
+                <div class="w-full md:w-1/4">
+                    <h2 class="text-2xl font-bold text-yc-dark sticky top-24">What I'm Doing</h2>
+                </div>
+                <div class="w-full md:w-3/4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                        <!-- Card 1 -->
+                        <div class="bg-white p-6 rounded-lg border border-yc-border hover:border-yc-orange transition-colors shadow-sm hover:shadow-md group">
+                            <div class="w-12 h-12 bg-orange-50 rounded-full flex items-center justify-center mb-4 group-hover:bg-yc-orange transition-colors">
+                                <i class="fa-solid fa-code text-yc-orange group-hover:text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3">Full-Stack Development</h3>
+                            <p class="text-yc-gray text-sm leading-relaxed">
+                                Architecting and building scalable web applications using React, Node.js, and modern cloud infrastructure. Focusing on performance and maintainability.
+                            </p>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="bg-white p-6 rounded-lg border border-yc-border hover:border-yc-orange transition-colors shadow-sm hover:shadow-md group">
+                            <div class="w-12 h-12 bg-orange-50 rounded-full flex items-center justify-center mb-4 group-hover:bg-yc-orange transition-colors">
+                                <i class="fa-solid fa-pen-nib text-yc-orange group-hover:text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3">UI/UX Design</h3>
+                            <p class="text-yc-gray text-sm leading-relaxed">
+                                Creating intuitive, minimalist user interfaces that prioritize function over excessive decoration. Heavily inspired by brutalist and Swiss design principles.
+                            </p>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="bg-white p-6 rounded-lg border border-yc-border hover:border-yc-orange transition-colors shadow-sm hover:shadow-md group">
+                            <div class="w-12 h-12 bg-orange-50 rounded-full flex items-center justify-center mb-4 group-hover:bg-yc-orange transition-colors">
+                                <i class="fa-solid fa-server text-yc-orange group-hover:text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3">Systems Architecture</h3>
+                            <p class="text-yc-gray text-sm leading-relaxed">
+                                Designing robust backend systems and APIs that can handle high throughput. Experienced with microservices and event-driven architectures.
+                            </p>
+                        </div>
+                        <!-- Card 4 -->
+                        <div class="bg-white p-6 rounded-lg border border-yc-border hover:border-yc-orange transition-colors shadow-sm hover:shadow-md group">
+                            <div class="w-12 h-12 bg-orange-50 rounded-full flex items-center justify-center mb-4 group-hover:bg-yc-orange transition-colors">
+                                <i class="fa-solid fa-chart-line text-yc-orange group-hover:text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3">Product Strategy</h3>
+                            <p class="text-yc-gray text-sm leading-relaxed">
+                                Working closely with founders to define product roadmaps, prioritize features, and establish technical feasibility for early-stage startups.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="w-full h-px bg-yc-border mb-20"></div>
+
+        <!-- Work Experience Section -->
+        <section id="experience" class="mb-24">
+            <div class="flex flex-col md:flex-row gap-8 md:gap-16">
+                <div class="w-full md:w-1/4">
+                    <h2 class="text-2xl font-bold text-yc-dark sticky top-24">Experience</h2>
+                </div>
+                <div class="w-full md:w-3/4">
+                    <div class="space-y-12">
+                        
+                        <!-- Experience Item 1 -->
+                        <div class="relative pl-8 md:pl-0">
+                            <div class="md:hidden absolute left-0 top-2 w-2 h-2 rounded-full bg-yc-orange"></div>
+                            <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
+                                <h3 class="text-xl font-bold text-yc-dark">Senior Software Engineer <span class="text-yc-orange font-normal hidden md:inline px-2">|</span> <span class="text-yc-gray font-medium block md:inline mt-1 md:mt-0">TechCorp Inc.</span></h3>
+                                <span class="text-sm font-mono text-yc-gray mt-2 md:mt-0 bg-gray-100 px-2 py-1 rounded">2021 — Present</span>
+                            </div>
+                            <p class="text-yc-gray text-sm mb-4 leading-relaxed">
+                                Led the core platform team in rebuilding the legacy monolith into a scalable microservices architecture. Improved system performance by 40% and reduced deployment times from hours to minutes.
+                            </p>
+                            <ul class="list-disc list-inside text-sm text-yc-dark space-y-2 marker:text-yc-orange">
+                                <li>Architected and deployed a new GraphQL API layer serving millions of requests daily.</li>
+                                <li>Mentored 5 junior engineers and established new code review guidelines.</li>
+                                <li>Spearheaded the migration to Kubernetes, resulting in a 30% reduction in infrastructure costs.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Experience Item 2 -->
+                        <div class="relative pl-8 md:pl-0">
+                            <div class="md:hidden absolute left-0 top-2 w-2 h-2 rounded-full bg-gray-300"></div>
+                            <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
+                                <h3 class="text-xl font-bold text-yc-dark">Product Engineer <span class="text-yc-orange font-normal hidden md:inline px-2">|</span> <span class="text-yc-gray font-medium block md:inline mt-1 md:mt-0">StartupX (YC W20)</span></h3>
+                                <span class="text-sm font-mono text-yc-gray mt-2 md:mt-0 bg-gray-100 px-2 py-1 rounded">2018 — 2021</span>
+                            </div>
+                            <p class="text-yc-gray text-sm mb-4 leading-relaxed">
+                                Early engineer at a Y Combinator backed startup. Built the MVP from scratch and helped scale the product to its first 10,000 paying users.
+                            </p>
+                            <ul class="list-disc list-inside text-sm text-yc-dark space-y-2 marker:text-yc-orange">
+                                <li>Developed real-time collaboration features using WebSockets and React.</li>
+                                <li>Designed and implemented the primary user dashboard, focusing on data density and usability.</li>
+                                <li>Integrated Stripe for complex subscription billing models.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Experience Item 3 -->
+                        <div class="relative pl-8 md:pl-0">
+                            <div class="md:hidden absolute left-0 top-2 w-2 h-2 rounded-full bg-gray-300"></div>
+                            <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
+                                <h3 class="text-xl font-bold text-yc-dark">Frontend Developer <span class="text-yc-orange font-normal hidden md:inline px-2">|</span> <span class="text-yc-gray font-medium block md:inline mt-1 md:mt-0">Agency Digital</span></h3>
+                                <span class="text-sm font-mono text-yc-gray mt-2 md:mt-0 bg-gray-100 px-2 py-1 rounded">2016 — 2018</span>
+                            </div>
+                            <p class="text-yc-gray text-sm mb-4 leading-relaxed">
+                                Created responsive, high-performance marketing websites and web applications for diverse client portfolios ranging from local businesses to enterprise brands.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="w-full h-px bg-yc-border mb-20"></div>
+
+        <!-- Projects Grid Section -->
+        <section id="projects" class="mb-24">
+            <div class="flex flex-col md:flex-row gap-8 md:gap-16">
+                <div class="w-full md:w-1/4">
+                    <h2 class="text-2xl font-bold text-yc-dark sticky top-24">Selected Projects</h2>
+                </div>
+                <div class="w-full md:w-3/4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        
+                        <!-- Project 1 -->
+                        <div class="group border border-yc-border rounded-lg overflow-hidden bg-white hover:border-yc-orange transition-all duration-300">
+                            <div class="h-48 overflow-hidden bg-gray-100 relative">
+                                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/e86612660e-b75acb57894c78e5655c.png" alt="minimalist dashboard interface design, orange and white color scheme, data visualization, clean typography" />
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-opacity flex items-center justify-center">
+                                    <a href="#" class="opacity-0 group-hover:opacity-100 bg-white text-yc-dark px-4 py-2 rounded font-medium transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg">View Details</a>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="font-bold text-lg">Logistics Dashboard</h3>
+                                    <a href="#" class="text-yc-gray hover:text-yc-orange"><i class="fa-solid fa-arrow-up-right-from-square text-sm"></i></a>
+                                </div>
+                                <p class="text-sm text-yc-gray mb-4 line-clamp-2">A comprehensive fleet management system with real-time tracking, order management, and analytics.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs font-mono bg-gray-100 px-2 py-1 rounded text-yc-dark">React</span>
+                                    <span class="text-xs font-mono bg-gray-100 px-2 py-1 rounded text-yc-dark">TypeScript</span>
+                                    <span class="text-xs font-mono bg-gray-100 px-2 py-1 rounded text-yc-dark">Mapbox</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="group border border-yc-border rounded-lg overflow-hidden bg-white hover:border-yc-orange transition-all duration-300">
+                            <div class="h-48 overflow-hidden bg-gray-100 relative">
+                                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/e454ccc726-d7e4f57d0c1d5d652646.png" alt="clean minimalist job portal website interface, orange accents, list based layout, typography focused" />
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-opacity flex items-center justify-center">
+                                    <a href="#" class="opacity-0 group-hover:opacity-100 bg-white text-yc-dark px-4 py-2 rounded font-medium transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg">View Details</a>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="font-bold text-lg">Job Portal Platform</h3>
+                                    <a href="#" class="text-yc-gray hover:text-yc-orange"><i class="fa-brands fa-github text-sm"></i></a>
+                                </div>
+                                <p class="text-sm text-yc-gray mb-4 line-clamp-2">A streamlined hiring platform connecting professionals with startups. Features complex filtering and applicant tracking.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs font-mono bg-gray-100 px-2 py-1 rounded text-yc-dark">Next.js</span>
+                                    <span class="text-xs font-mono bg-gray-100 px-2 py-1 rounded text-yc-dark">Node.js</span>
+                                    <span class="text-xs font-mono bg-gray-100 px-2 py-1 rounded text-yc-dark">PostgreSQL</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="w-full h-px bg-yc-border mb-20"></div>
+
+        <!-- Contact & Call Me Section -->
+        <section id="contact" class="mb-12 bg-yc-dark text-white rounded-xl p-8 md:p-12 relative overflow-hidden">
+            <!-- Decorative element -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-yc-orange opacity-10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+            
+            <div class="relative z-10 flex flex-col md:flex-row gap-12 items-center justify-between">
+                <div class="w-full md:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 font-serif">Let's build something.</h2>
+                    <p class="text-gray-400 mb-8 max-w-md text-sm md:text-base">
+                        Currently open for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-yc-orange">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-400 uppercase tracking-wider font-mono">Call Me</p>
+                                <a href="tel:+1234567890" class="text-lg font-medium hover:text-yc-orange transition-colors">+1 (555) 123-4567</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-yc-orange">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-400 uppercase tracking-wider font-mono">Email</p>
+                                <a href="mailto:hello@example.com" class="text-lg font-medium hover:text-yc-orange transition-colors">hello@johndoe.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-1/2 bg-white/5 p-6 rounded-lg border border-white/10 backdrop-blur-sm">
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-xs font-mono text-gray-400 mb-1 uppercase tracking-wider">Name</label>
+                            <input type="text" id="name" class="w-full bg-white/10 border border-white/20 rounded px-4 py-2 text-white focus:outline-none focus:border-yc-orange focus:ring-1 focus:ring-yc-orange transition-colors text-sm" placeholder="John Smith">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-xs font-mono text-gray-400 mb-1 uppercase tracking-wider">Email</label>
+                            <input type="email" id="email" class="w-full bg-white/10 border border-white/20 rounded px-4 py-2 text-white focus:outline-none focus:border-yc-orange focus:ring-1 focus:ring-yc-orange transition-colors text-sm" placeholder="john@example.com">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-xs font-mono text-gray-400 mb-1 uppercase tracking-wider">Message</label>
+                            <textarea id="message" rows="4" class="w-full bg-white/10 border border-white/20 rounded px-4 py-2 text-white focus:outline-none focus:border-yc-orange focus:ring-1 focus:ring-yc-orange transition-colors text-sm resize-none" placeholder="How can I help you?"></textarea>
+                        </div>
+                        <button type="button" class="w-full bg-yc-orange text-white font-medium py-3 rounded hover:bg-orange-600 transition-colors flex justify-center items-center gap-2">
+                            Send Message <i class="fa-solid fa-paper-plane text-sm"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="w-full bg-white border-t border-yc-border py-8 mt-auto">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex items-center gap-2">
+                    <span class="font-serif font-bold text-xl text-yc-orange tracking-tighter">JD.</span>
+                    <span class="text-sm text-yc-gray">© 2024 John Doe. All rights reserved.</span>
+                </div>
+                
+                <div class="flex gap-6">
+                    <a href="https://github.com" target="_blank" class="text-yc-gray hover:text-yc-orange transition-colors">
+                        <span class="sr-only">GitHub</span>
+                        <i class="fa-brands fa-github text-xl"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="text-yc-gray hover:text-yc-orange transition-colors">
+                        <span class="sr-only">LinkedIn</span>
+                        <i class="fa-brands fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="text-yc-gray hover:text-yc-orange transition-colors">
+                        <span class="sr-only">Twitter</span>
+                        <i class="fa-brands fa-twitter text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const icon = btn.querySelector('i');
+
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                if (menu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                }
+            });
+
+            // Close mobile menu when clicking a link
+            const mobileLinks = menu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
