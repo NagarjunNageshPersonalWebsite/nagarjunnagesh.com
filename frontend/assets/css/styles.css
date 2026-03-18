@@ -1,0 +1,61 @@
+/* Smooth scroll and account for sticky header */
+html { scroll-behavior: smooth; }
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #FAFAFA;
+    color: #1A1A1A;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+}
+.yc-link {
+    transition: color 0.2s ease;
+}
+.yc-link:hover {
+    color: #F26522;
+}
+.nav-link {
+    position: relative;
+    text-decoration: none;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #F26522;
+    transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+    width: 100%;
+}
+/* Ensure anchored sections are visible below sticky header */
+#contact { scroll-margin-top: 5rem; }
+
+/* Mobile helpers from mobile.html */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.bottom-nav-safe { padding-bottom: env(safe-area-inset-bottom, 12px); }
+.top-safe { padding-top: env(safe-area-inset-top, 20px); }
+
+/* Card shadows and rounded values for mobile cards */
+.shadow-card { box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+.shadow-float { box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+.rounded-3xl { border-radius: 2rem; }
+
+/* Horizontal scroll snapping experience for mobile cards */
+.scroll-snap-x { scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+.scroll-snap-start { scroll-snap-align: start; }
+
+/* Mobile menu panel animation */
+.mobile-panel-enter { transform: translateY(-6px); opacity: 0; }
+.mobile-panel-enter-active { transform: translateY(0); opacity: 1; transition: transform 220ms ease, opacity 220ms ease; }
+.mobile-panel-exit { transform: translateY(0); opacity: 1; }
+.mobile-panel-exit-active { transform: translateY(-6px); opacity: 0; transition: transform 180ms ease, opacity 180ms ease; }
+
+/* Bottom navigation specific tweaks */
+.bottom-navigation { box-shadow: 0 -6px 24px rgba(0,0,0,0.06); }
+.bottom-navigation a.active { color: #F26522; }
+
