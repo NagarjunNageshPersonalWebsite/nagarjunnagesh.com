@@ -49,6 +49,7 @@ jobs:
         run: go test -v ./...
 
       - name: Bootstrap CDK
+        working-directory: infra
         run: |
           if [[ ${{ github.event.inputs.stack }} == "WebsiteInfraStack" ]]; then
             region="${{ secrets.AWS_REGION }}"
@@ -68,6 +69,7 @@ jobs:
           CERTIFICATE_ARN: ${{ secrets.CERTIFICATE_ARN }}
 
       - name: Deploy CDK
+        working-directory: infra
         run: |
           if [[ ${{ github.event.inputs.stack }} == "WebsiteInfraStack" ]]; then
             region="${{ secrets.AWS_REGION }}"
