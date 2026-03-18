@@ -286,7 +286,7 @@ func main() {
 	})
 
 	// Create nagarjunnagesh.com infrastructure
-	NewWebsiteInfraStack(app, "WebsiteInfraStack", &WebsiteInfraStackProps{
+	/*NewWebsiteInfraStack(app, "WebsiteInfraStack", &WebsiteInfraStackProps{
 		awscdk.StackProps{
 			Env: env(),
 		},
@@ -309,7 +309,7 @@ func main() {
 		CERTIFICATE_ARN,
 		HOSTED_ZONE_ID,
 		WWW_HOME_PAGE,
-	})
+	})*/
 
 	app.Synth(nil)
 }
