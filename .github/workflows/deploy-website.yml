@@ -35,23 +35,6 @@ jobs:
           role-session-name: ${{ secrets.AWS_ROLE_SESSION_NAME }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '24'
-
-      - name: Install dependencies (Make)
-        run: make -C frontend setup
-
-      - name: Build CSS (Make)
-        run: make -C frontend build
-
-      - name: Upload built CSS
-        uses: actions/upload-artifact@v4
-        with:
-          name: frontend-css
-          path: frontend/assets/css/tailwind.css
-
       - name: NAGARJUNNAGESH to Upload to S3
         working-directory: frontend
         run: |
