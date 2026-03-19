@@ -101,7 +101,7 @@ func createS3Bucket(props *WebsiteInfraStackProps, stack awscdk.Stack) (string, 
 }
 
 func createResponseHeaderPolicy(stack awscdk.Stack, props *WebsiteInfraStackProps) awscloudfront.ResponseHeadersPolicy {
-	cspPolicy := `default-src 'self' https://www.google.com/recaptcha/api2/; script-src 'self' 'unsafe-inline' https://nagarjunnagesh.com/  https://cdn.jsdelivr.net/ https://www.google.com/recaptcha/ https://cdn.tailwindcss.com/ https://cdnjs.cloudflare.com/ https://www.gstatic.com/recaptcha/; object-src 'none'; font-src data: https://use.fontawesome.com/ https://fonts.gstatic.com/ https://cdnjs.cloudflare.com/ 'self'; style-src-elem https://cdn.jsdelivr.net/ https://use.fontawesome.com/ https://cdnjs.cloudflare.com/ https://fonts.googleapis.com/ 'self' 'unsafe-inline'`
+	cspPolicy := `default-src 'self' https://www.google.com/recaptcha/api2/; script-src 'self' 'unsafe-inline' https://nagarjunnagesh.com/  https://cdn.jsdelivr.net/ https://www.google.com/recaptcha/ https://cdn.tailwindcss.com/ https://cdnjs.cloudflare.com/ https://www.gstatic.com/recaptcha/; object-src 'none'; font-src data: https://use.fontawesome.com/ https://fonts.gstatic.com/ https://cdnjs.cloudflare.com/ 'self'; style-src-elem https://cdn.jsdelivr.net/ https://use.fontawesome.com/ https://cdnjs.cloudflare.com/ https://fonts.googleapis.com/ 'self' 'unsafe-inline'; style-src-attr 'unsafe-hashes' 'sha256-X+zrZv/IbzjZUnhsbWlsecLbwjndTpG0ZynXOif7V+k=' 'sha256-a4ayc/80/OGda4BO/1o/V0etpOqiLx1JwB5S3beHW0s='`
 
 	rspName := "NAGARJUNNAGESHResponseHeadersPolicy"
 	if props.DomainName != NAGARJUNNAGESH_COM_DOMAIN_NAME {
