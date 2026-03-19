@@ -1,26 +1,5 @@
 // Moved inline scripts from index.html
 
-// Tailwind config
-tailwind.config = {
-    theme: {
-        extend: {
-            colors: {
-                yc: {
-                    orange: '#F26522',
-                    dark: '#1A1A1A',
-                    light: '#F8F9FA',
-                    gray: '#6B7280',
-                    border: '#E5E7EB'
-                }
-            },
-            fontFamily: {
-                serif: ['Playfair Display', 'serif'],
-                sans: ['Inter', 'sans-serif'],
-            }
-        }
-    }
-};
-
 // Mobile menu removed — using bottom navigation on small screens
 
 // Bottom nav active state (mobile)
